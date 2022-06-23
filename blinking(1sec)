@@ -1,0 +1,23 @@
+int L= LOW;
+unsigned long millisecond=0;
+#define pin 8
+void setup() {
+    pinMode(pin,OUTPUT);
+}
+
+void loop() {
+    unsigned long ms =  millis();
+    if ((ms-millisecond)>=1000)
+    {
+        millisecond=ms;
+        if (L==LOW)
+        {
+            L= HIGH;
+        }
+        else
+        {
+            L= LOW;
+        }
+        digitalWrite(pin,L);
+    }
+}
